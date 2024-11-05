@@ -3,9 +3,11 @@ en:
     placeholders:
       todo:
         name: Name of your todo
+        author: Author of the todo
     labels:
       todo:
         name: Name
+        author: Author
 
   helpers:
     submit:

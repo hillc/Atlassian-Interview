@@ -5,6 +5,7 @@
       </div>
     <% end %>
   
-    <%= f.input :name, input_html: { autofocus: true } %>
+    <%= f.input :name, label: false, input_html: { autofocus: true, } %>
+    <%= f.input :author, label: false  %>
     <%= f.submit class: "btn btn--secondary" %>
   <% end %>

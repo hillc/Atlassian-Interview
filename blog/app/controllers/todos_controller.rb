@@ -2,7 +2,7 @@ class TodosController < ApplicationController
     before_action :set_todo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @todos = Todo.all
+    @todos = Todo.ordered
   end
 
   def show
@@ -16,7 +16,10 @@ class TodosController < ApplicationController
     @todo = Todo.new(todo_params)
 
     if @todo.save
-      redirect_to todos_path, notice: "Todo was successfully created."
+      respond_to do |format|
+        format.html { redirect_to todos_path, notice: "Todo was successfully created." }
+        format.turbo_stream
+      end
     else
       # Add `status: :unprocessable_entity` here
       render :new, status: :unprocessable_entity
@@ -37,7 +40,11 @@ class TodosController < ApplicationController
 
   def destroy
     @todo.destroy
-    redirect_to todos_path, notice: "Todo was successfully destroyed."
+  
+    respond_to do |format|
+      format.html { redirect_to todos_path, notice: "todo was successfully destroyed." }
+      format.turbo_stream
+    end
   end
 
   private
@@ -47,6 +54,6 @@ class TodosController < ApplicationController
   end
 
   def todo_params
-    params.require(:todo).permit(:name)
+    params.require(:todo).permit(:name, :author)
   end
 end

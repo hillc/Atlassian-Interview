@@ -12,4 +12,25 @@
  *
  *= require_tree .
  *= require_self
+ *= require material_icons
  */
+
+body {
+    background-color: #eeee;
+    
+    font-family: sans-serif;
+}
+
+.link__button {
+    display: flex;
+    flex-grow: 0;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    color: white; /* blue colors for links too */
+    font-weight: bold;
+    text-decoration: inherit; /* no underline */
+    border-radius: 15px;
+    padding: 5px;
+    background-color: rgb(67, 67, 160);
+}
