@@ -1,0 +1,20 @@
+<%= turbo_stream_from "todos" %>
+<main class="container">
+  <div class="header">
+    <h1>Todos</h1>
+  </div>
+  <div class="todos__table" >
+    <%= turbo_frame_tag "todos" do %>
+      <%= render @todos %>
+    <% end %>
+  </div>
+  <div class="todos__table" >
+    <%= turbo_frame_tag Todo.new  %>
+  </div>
+  <div class="todos__footer">
+    <%= link_to "New todo",
+                new_todo_path,
+                class: "link__button",
+                data: { turbo_frame: dom_id(Todo.new) } %>
+  </div>
+</main>

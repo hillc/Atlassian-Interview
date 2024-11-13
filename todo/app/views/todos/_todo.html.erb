@@ -1,0 +1,14 @@
+<%= turbo_frame_tag "todo_#{todo.id}" do %>
+  <div class="todo">
+    <%= link_to todo.name, todo_path(todo),data: { turbo_frame: "_top" }, class: "todo__name" %>
+    <span class="todo__author"><%= todo.author %></span>
+  </span>
+  <span class="todo__header" >
+    <%= link_to "Edit", edit_todo_path(todo),  :class => "link__button" %>
+    <span> <%= link_to todo_path(todo), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "todo__cancel" do %>
+        <%= material_icon.shape(:delete)  %>
+      <% end %>
+    </span>
+  </span>
+</div>
+<% end %>

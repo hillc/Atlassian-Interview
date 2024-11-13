@@ -1,0 +1,11 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to todos"), todos_path %>
+  <div class="header">
+    <h1>
+      <%= @todo.name %>
+    </h1>
+    <h2>
+      <%= @todo.author %>
+    </h2>
+  </div>
+</main>

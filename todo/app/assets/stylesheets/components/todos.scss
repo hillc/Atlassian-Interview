@@ -1,0 +1,52 @@
+.todos__table {
+    width: 90%;
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+.todo {
+    background-color: white;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.todo__link { 
+    flex-basis: 100% ;
+    height: 0px;
+}
+
+.todo__header {
+    flex-shrink: 1; 
+    display: flex;
+    align-items: center;
+}
+
+.todo__author {
+    flex-basis: 100%;
+    font-size: 16px;
+    font-weight: light;
+    color: #a3a3a3;
+}
+
+.todo__name { 
+    flex-basis: 100%;
+    color: black;
+    text-decoration: inherit; /* no underline */
+    font: 16px;
+    font-weight: bold;
+}
+
+.todos__footer {
+    flex-basis: 100%;
+    padding-top: 12px
+}
+
+.todo__cancel {
+    text-decoration: inherit;
+    color: rgb(67, 67, 160);
+}
